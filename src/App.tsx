@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const getWeather = async () => {
       try {
-        const data = await fetchWeatherData({ lat: 35, lng: 139 });
+        const data = await fetchWeatherData({ lat: 35.6812, lon: 139.7671 });
         setWeather(data);
       } catch (error) {
         console.error(error);
@@ -27,16 +27,16 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>読み込み中...</div>;
   }
 
   if (!weather) {
-    return <div>Weather information could not be retrieved.</div>;
+    return <div>天気情報が取得できませんでした。</div>;
   }
 
   return (
     <div>
-      <h1>天気情報</h1>
+      <h1>天気情報（東京駅）</h1>
       <pre>{JSON.stringify(weather, null, 2)}</pre>
     </div>
   );
