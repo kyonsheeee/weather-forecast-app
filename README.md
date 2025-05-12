@@ -52,3 +52,5 @@ export default tseslint.config({
   },
 })
 ```
+
+## Yahoo!地図・天気API を使用
